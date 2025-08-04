@@ -1,68 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Health Buddy</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>My Health Buddy</h1>
-    <nav>
-      <button onclick="showSection('checkin')">Daily Check-In</button>
-      <button onclick="showSection('meal')">Meal Planner</button>
-      <button onclick="showSection('habit')">Habit Builder</button>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Health Buddy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My Health Buddy</h1>
+      <nav>
+        <button onclick="showSection('checkin')">Daily Check-In</button>
+        <button onclick="showSection('meal')">Meal Planner</button>
+        <button onclick="showSection('habit')">Habit Builder</button>
+      </nav>
+    </header>
 
-  <main>
-    <!-- Daily Check-In -->
-    <section id="checkin" class="active form-card">
-      <h2>Daily Check-In</h2>
-      <form id="checkinForm">
-        <label>Mood:
-          <select name="mood">
-            <option>Happy</option><option>Neutral</option><option>Sad</option>
-          </select>
-        </label>
-        <label>Energy Level (1-10): <input type="number" name="energy" min="1" max="10" /></label>
-        <label>Hours of Sleep: <input type="number" name="sleep" /></label>
-        <label>Today's Goal: <input type="text" name="goal" /></label>
-        <button type="submit" class="submit-btn">Submit Check-In</button>
-      </form>
-    </section>
+    <main>
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="profile">
+            <div class="avatar">👩🏻</div>
+            <h3>Raghav Sharma</h3>
+            <p>Age: 18</p>
+            <p>Gender: Male</p>
+            <p>Height: 165 cm</p>
+            <p>Weight: 65 kg</p>
+          </div>
+        </aside>
+        <div class="content">
+          <!-- Daily Check-in -->
+          <section id="checkin" class="section-container active">
+            <div class="card-wrap">
+              <div class="form-card">
+                <h2>Daily Check-In</h2>
+                <form id="checkinForm">
+                  <label
+                    >Mood: <input type="text" name="mood" required
+                  /></label>
+                  <label
+                    >Energy Level:
+                    <input
+                      type="number"
+                      name="energy"
+                      min="1"
+                      max="10"
+                      required
+                  /></label>
+                  <label
+                    >Sleep Hours:
+                    <input type="number" name="sleep" min="0" max="24" required
+                  /></label>
+                  <label
+                    >Goals for Today: <input type="text" name="goals" required
+                  /></label>
+                  <button type="submit">Submit</button>
+                </form>
+              </div>
+              <div class="output-card" id="checkinOutput"></div>
+            </div>
+          </section>
 
-    <!-- Meal Planner -->
-    <section id="meal" class="form-card">
-      <h2>Meal Planner</h2>
-      <form id="mealForm">
-        <label>Diet Goal:
-          <select name="dietGoal">
-            <option>Weight Loss</option>
-            <option>Muscle Gain</option>
-            <option>Diabetic Friendly</option>
-          </select>
-        </label>
-        <button type="submit" class="submit-btn">Get Meal Plan</button>
-      </form>
-      <div id="mealOutput"></div>
-    </section>
+          <!-- Meal Planner -->
+          <section id="meal" class="section-container">
+            <div class="card-wrap">
+              <div class="form-card">
+                <h2>Meal Planner</h2>
+                <form id="mealForm">
+                  <label
+                    >Diet Type:
+                    <select name="diet">
+                      <option>Vegetarian</option>
+                      <option>Vegan</option>
+                      <option>Gluten-Free</option>
+                    </select>
+                  </label>
+                  <label
+                    >Calories Target:
+                    <input type="number" name="calories" required
+                  /></label>
+                  <button type="submit">Get Meal Plan</button>
+                </form>
+              </div>
+              <div class="output-card" id="mealOutput"></div>
+            </div>
+          </section>
 
-    <!-- Habit Builder -->
-    <section id="habit" class="form-card">
-      <h2>Habit Tracker</h2>
-      <form id="habitForm">
-        <label>Water Intake (glasses): <input type="number" name="water" /></label>
-        <label>Sleep (hours): <input type="number" name="habitSleep" /></label>
-        <label>Screen Time (hours): <input type="number" name="screenTime" /></label>
-        <label>Steps Taken: <input type="number" name="steps" /></label>
-        <button type="submit" class="submit-btn">Update Habits</button>
-      </form>
-    </section>
-  </main>
+          <!-- Habit Builder -->
+          <section id="habit" class="section-container">
+            <div class="card-wrap">
+              <div class="form-card">
+                <h2>Habit Builder</h2>
+                <form id="habitForm">
+                  <label
+                    >Water Intake (glasses):
+                    <input type="number" name="water" required
+                  /></label>
+                  <label
+                    >Sleep Hours:
+                    <input type="number" name="sleepHours" required
+                  /></label>
+                  <label
+                    >Screen Time (hrs):
+                    <input type="number" name="screen" required
+                  /></label>
+                  <label
+                    >Steps Walked: <input type="number" name="steps" required
+                  /></label>
+                  <button type="submit">Track</button>
+                </form>
+              </div>
+              <div class="output-card" id="habitOutput"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-

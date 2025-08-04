@@ -1,30 +1,18 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #c8e6c9, #f8bbd0);
-  min-height: 100vh;
+  background: linear-gradient(135deg, #dff9fb, #c7ecee);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 header {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  padding: 20px;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-  font-size: 2.5rem;
-  color: #2e7d32;
-  margin-bottom: 10px;
+  background-color: #2f3542;
+  color: white;
+  padding: 20px 0;
 }
 
 nav {
@@ -32,97 +20,157 @@ nav {
 }
 
 nav button {
-  background: #66bb6a;
-  border: none;
+  background: #1e90ff;
   color: white;
+  border: none;
+  padding: 10px 18px;
   margin: 5px;
-  padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
 nav button:hover {
-  background: #388e3c;
+  background-color: #3742fa;
 }
 
 main {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
-section {
-  display: none;
-}
-
-section.active {
-  display: block;
-}
-
-.form-card {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 30px;
-  border-radius: 20px;
   width: 100%;
-  max-width: 450px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.5s ease-in-out;
+  max-width: 1200px;
+  padding: 20px;
 }
 
-h2 {
-  color: #388e3c;
-  margin-bottom: 20px;
-  text-align: center;
+.section-container {
+  display: none;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.section-container.active {
+  display: flex;
+}
+
+.card-wrap {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.form-card, .output-card {
+  width: 50%;
+  background-color: #ffffffd9;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-label {
-  font-size: 1rem;
-  color: #444;
+form label {
+  margin-bottom: 12px;
 }
 
-input, select {
-  padding: 10px;
-  border-radius: 8px;
+form input, form select {
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 16px;
 }
 
-.submit-btn {
-  background-color: #81c784;
-  border: none;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
+form button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #1e90ff;
   color: white;
-  transition: background 0.3s;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
-.submit-btn:hover {
-  background-color: #4caf50;
+form button:hover {
+  background-color: #3742fa;
 }
 
-#mealOutput {
-  margin-top: 20px;
-  background: #f1f8e9;
-  padding: 15px;
-  border-radius: 10px;
-  color: #33691e;
+.output-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+.layout {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
+.sidebar {
+  width: 230px;
+  background: #ffffffdd;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+.profile {
+  text-align: center;
+}
+
+.avatar {
+  font-size: 60px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  background-color: #f6e58d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #2f3640;
+}
+
+.profile p {
+  margin: 12px 0;
+  font-size: 0.95rem;
+  color: #353b48;
+  line-height: 1.6;
+}
+
+
+.content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
 
