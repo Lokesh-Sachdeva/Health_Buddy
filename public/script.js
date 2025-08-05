@@ -6,8 +6,18 @@ function showSection(id) {
   document.getElementById(id).classList.add('active');
 }
 
-// Check-in form
-document.getElementById('checkinForm').addEventListener('submit', function (e) {
+// Connect to Relay backend
+async function sendDataToRelay(endpoint, data) {
+  const url = "YOUR_RELAY_WEBHOOK_URL"; // Replace with actual Relay URL
+  await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ endpoint, data })
+  });
+}
+
+// Form listeners
+document.getElementById('checkinForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const form = new FormData(this);
   const output = `

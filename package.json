@@ -1,0 +1,24 @@
+{
+  "name": "health_buddy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lokesh-Sachdeva/Health_Buddy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lokesh-Sachdeva/Health_Buddy/issues"
+  },
+  "homepage": "https://github.com/Lokesh-Sachdeva/Health_Buddy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
